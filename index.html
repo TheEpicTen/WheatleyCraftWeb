@@ -1,0 +1,255 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="shortcut icon" href="/content/img/favicon.png">
+        <meta name="google-site-verification" content="GAWefcErkmWjxbBDH0pPU9z61ChBVCZVdnrDW90HsX0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="The Official HermitCraft Website. Watch the latest HermitCraft videos!">
+        <meta name="keywords" content="minecraft mine craft HermitCraft hermit craft hermitpack modsauce mod sauce youtube video videos lets let's play lp">
+        <meta name="fragment" content="!">
+        <title>HermitCraft | hermitcraft.com</title>
+        <link href="/bundles/css?v=-ZTEgJvlS0T40VVR2FA1S43cJU9bUX-VDkojcd3hDbY1" rel="stylesheet"/>
+
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.4/angular.min.js"></script>
+        <script src="/bundles/angular?v=dTNO3RRNq61gU9LltGADzb1-NuBzMeW-qBiAL4d0NxY1"></script>
+
+    </head>
+    <body data-ng-app="hermitcraft" ng-cloak>
+        <img class="mobileHide" id="backgroundImg" src="/content/img/background2.jpg" alt="background" />
+        <div class="container">
+            <header>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <a href="/"><img src="/content/img/HermitCraftBanner1.png" alt="HermitCraft" class="center-block img-responsive" width="1000" height="120"></a>
+                    </div>
+                </div>
+            </header>
+            
+
+<div class="row">
+    <div class="col-lg-3 col-md-3 col-sm-3" style="padding:0;">
+        <div id="MemberListContainer">
+            <section data-ng-controller="MemberListController" ng-cloak>
+    <section>
+        <button class="navbar-toggle" type="button" data-ng-click="memberListHide = !memberListHide">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+        </button>
+        <span id="MembersMenu">Members
+            <span data-ng-class="{ 'hide' : totalStreaming == 0}" class="badge pull-right">
+                {{totalStreaming}}
+                <span class="livetext">🔴LIVE</span>
+            </span>
+        </span>
+        <ul data-ng-init="memberListHide = true" data-ng-class="{'hide' : memberListHide}" class="list-group">
+            <li class="list-group-item" data-ng-repeat="member in members | orderBy:'DisplayName'">
+                <a href="/{{member.ChannelName}}"><img class="link-icon" data-ng-src="{{member.ProfilePicture}}" alt=" " width="20" height="20" />{{member.DisplayName}}</a>
+                <a data-ng-class="{ 'hide' : !member.Streaming }" class="badge" title="View {{member.DisplayName}}'s Twitch Livestream!" target="_blank" href="https://twitch.tv/{{member.TwitchName}}">🔴LIVE</a>
+                <a data-ng-class="{ 'hide' : !member.YTStreaming }" class="badge" title="View {{member.DisplayName}}'s YouTube Gaming Livestream!" target="_blank" href="https://gaming.youtube.com/{{member.ChannelName}}/live">🔴LIVE</a>
+            </li>
+        </ul>
+    </section>
+    
+    <section data-ng-class="{'hide' : inactiveMembers.length == 0}">
+        <button class="navbar-toggle" type="button" data-ng-click="inactiveMemberListHide = !inactiveMemberListHide">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+        </button>
+        <span id="MembersMenu">Inactive</span>
+        <ul data-ng-init="inactiveMemberListHide = true" data-ng-class="{'hide' : inactiveMemberListHide}" class="list-group">
+            <li class="list-group-item" data-ng-repeat="inactiveMember in inactiveMembers | orderBy:'DisplayName'">
+                <a href="/"><img class="link-icon" data-ng-src="{{inactiveMember.ProfilePicture}}" alt=" " width="20" height="20" />{{inactiveMember.DisplayName}}</a>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <button class="navbar-toggle" type="button" data-ng-click="linksListHide = !linksListHide">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+        </button>
+        <span>Links</span>
+        <ul class="list-group" data-ng-init="linksListHide = true" data-ng-class="{'hide' : linksListHide}">
+            <li class="list-group-item"><a href="https://livestream.hermitcraft.com" target="_blank"><img class="link-icon" src="/content/img/favicon.png" alt="HermitCraft Livestream Day" width="20" height="20" />HermitCraft Livestream Day</a></li>
+            <li class="list-group-item"><a href="https://tag.hermitcraft.com" target="_blank"><img class="link-icon" src="/content/img/favicon.png" alt="HermitCraft Tag Game" width="20" height="20" />HermitCraft Tag Game</a></li>
+            <li class="list-group-item"><a href="https://twitch.tv/hermitcraft_" target="_blank"><img class="link-icon" src="/content/img/twitch.png" alt="Official HermitCraft Twitch Channel" width="20" height="20" />HermitCraft Twitch</a></li>
+            <li class="list-group-item"><a href="/modsauce" target="_blank"><img class="link-icon" src="/content/img/favicon.png" alt="HermitCraft ModSauce" width="20" height="20" />ModSauce</a></li>
+            <li class="list-group-item"><a href="https://twitter.com/hermitcraft_" target="_blank"><img class="link-icon" src="/content/img/tw.png" alt="Official Twitter" width="20" height="20" />HermitCraft Twitter</a></li>
+            <li class="list-group-item"><a href="https://reddit.com/r/HermitCraft" target="_blank"><img class="link-icon" src="/content/img/reddit.png" alt="Official Sub-Reddit" width="20" height="20" />HermitCraft Reddit</a></li>
+        </ul>
+    </section>
+    <section>
+        <button class="navbar-toggle" type="button" data-ng-click="downloadsListHide = !downloadsListHide">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+        </button>
+        <span>Maps</span>
+        <ul class="list-group" data-ng-init="downloadsListHide = true" data-ng-class="{'hide' : downloadsListHide}">
+            <li class="list-group-item"><a onclick="_gaq.push(['_setAccount', 'UA-49589431-3'], ['_setDomainName', 'hermitcraft.com'], ['_trackEvent', 'Download', 'GM4 S1']);" href="https://download.hermitcraft.com/hermitcraftgm4-s1.zip"><img class="link-icon" src="/content/img/favicon.png" alt="HermitCraft" width="20" height="20" />Gamemode 4</a></li>
+            <li class="list-group-item"><a onclick="_gaq.push(['_setAccount', 'UA-49589431-3'], ['_setDomainName', 'hermitcraft.com'], ['_trackEvent', 'Download', 'FTB S1']);" href="https://download.hermitcraft.com/hermitcraftmodded-s1-ftbultimate.zip"><img class="link-icon" src="/content/img/favicon.png" alt="HermitCraft" width="20" height="20" />Modded S1 FTB Ultimate</a></li>
+            <li class="list-group-item"><a onclick="_gaq.push(['_setAccount', 'UA-49589431-3'], ['_setDomainName', 'hermitcraft.com'], ['_trackEvent', 'Download', 'FTB S2']);" href="https://download.hermitcraft.com/hermitcraftmodded-s2-ftbunleashed.zip"><img class="link-icon" src="/content/img/favicon.png" alt="HermitCraft" width="20" height="20" />Modded S2 FTB Unleashed</a></li>
+            <li class="list-group-item"><a onclick="_gaq.push(['_setAccount', 'UA-49589431-3'], ['_setDomainName', 'hermitcraft.com'], ['_trackEvent', 'Download', 'FTB S3']);" href="https://download.hermitcraft.com/hermitcraftmodded-s3-ftbmonster.zip"><img class="link-icon" src="/content/img/favicon.png" alt="HermitCraft" width="20" height="20" />Modded S3 FTB Monster</a></li>
+            <li class="list-group-item"><a onclick="_gaq.push(['_setAccount', 'UA-49589431-3'], ['_setDomainName', 'hermitcraft.com'], ['_trackEvent', 'Download', 'MS S4']);" href="https://download.hermitcraft.com/hermitcraftmodded-s4-modsauce.zip"><img class="link-icon" src="/content/img/favicon.png" alt="HermitCraft" width="20" height="20" />Modded S4 Modsauce</a></li>
+            <li class="list-group-item"><a onclick="_gaq.push(['_setAccount', 'UA-49589431-3'], ['_setDomainName', 'hermitcraft.com'], ['_trackEvent', 'Download', 'FTB S5']);" href="https://download.hermitcraft.com/hermitcraftmodded-s5-ftbinfinity.zip"><img class="link-icon" src="/content/img/favicon.png" alt="HermitCraft" width="20" height="20" />Modded S5 FTB Infinity</a></li>
+            <li class="list-group-item"><a onclick="_gaq.push(['_setAccount', 'UA-49589431-3'], ['_setDomainName', 'hermitcraft.com'], ['_trackEvent', 'Download', 'MS S6']);" href="https://download.hermitcraft.com/hermitcraftmodded-s6-modsauce2.zip"><img class="link-icon" src="/content/img/favicon.png" alt="HermitCraft" width="20" height="20" />Modded S6 Modsauce2</a></li>
+            <li class="list-group-item"><a onclick="_gaq.push(['_setAccount', 'UA-49589431-3'], ['_setDomainName', 'hermitcraft.com'], ['_trackEvent', 'Download', 'HP']);" href="https://download.hermitcraft.com/hermitcraftmodded-s7-hermitpack.zip"><img class="link-icon" src="/content/img/favicon.png" alt="HermitCraft" width="20" height="20" />HermitPack</a></li>
+            <li class="list-group-item"><a onclick="_gaq.push(['_setAccount', 'UA-49589431-3'], ['_setDomainName', 'hermitcraft.com'], ['_trackEvent', 'Download', 'HS']);" href="https://download.hermitcraft.com/hermitcraftmodded-s8-hermitskies.zip"><img class="link-icon" src="/content/img/favicon.png" alt="HermitCraft" width="20" height="20" />Hermit Skies</a></li>
+            <li class="list-group-item map">
+                <img class="link-icon" src="/content/img/favicon.png" alt="HermitCraft" width="20" height="20" />
+                Vanilla S1
+                <a onclick="_gaq.push(['_setAccount', 'UA-49589431-3'], ['_setDomainName', 'hermitcraft.com'], ['_trackEvent', 'Download', 'Vanilla S1']);" href="https://download.hermitcraft.com/hermitcraft1.zip">Java</a>
+                <span>|</span>
+                <a onclick="_gaq.push(['_setAccount', 'UA-49589431-3'], ['_setDomainName', 'hermitcraft.com'], ['_trackEvent', 'Download', 'Vanilla S1B']);" href="https://download.hermitcraft.com/hermitcraft1-bedrock.zip">Bedrock</a>
+                <span>|</span>
+                <a onclick="_gaq.push(['_setAccount', 'UA-49589431-3'], ['_setDomainName', 'hermitcraft.com'], ['_trackEvent', 'Download', 'Vanilla S1MCW']);" href="https://download.hermitcraft.com/hermitcraft1.mcworld">MCW</a>
+            </li>
+            <li class="list-group-item map">
+                <img class="link-icon" src="/content/img/favicon.png" alt="HermitCraft" width="20" height="20" />
+                Vanilla S2
+                <a onclick="_gaq.push(['_setAccount', 'UA-49589431-3'], ['_setDomainName', 'hermitcraft.com'], ['_trackEvent', 'Download', 'Vanilla S2']);" href="https://download.hermitcraft.com/hermitcraft2.zip">Java</a>
+                <span>|</span>
+                <a onclick="_gaq.push(['_setAccount', 'UA-49589431-3'], ['_setDomainName', 'hermitcraft.com'], ['_trackEvent', 'Download', 'Vanilla S2B']);" href="https://download.hermitcraft.com/hermitcraft2-bedrock.zip">Bedrock</a>
+                <span>|</span>
+                <a onclick="_gaq.push(['_setAccount', 'UA-49589431-3'], ['_setDomainName', 'hermitcraft.com'], ['_trackEvent', 'Download', 'Vanilla S2MCW']);" href="https://download.hermitcraft.com/hermitcraft2.mcworld">MCW</a>
+            </li>
+            <li class="list-group-item map">
+                <img class="link-icon" src="/content/img/favicon.png" alt="HermitCraft" width="20" height="20" />
+                Vanilla S3
+                <a onclick="_gaq.push(['_setAccount', 'UA-49589431-3'], ['_setDomainName', 'hermitcraft.com'], ['_trackEvent', 'Download', 'Vanilla S3']);" href="https://download.hermitcraft.com/hermitcraft3.zip">Java</a>
+                <span>|</span>
+                <a onclick="_gaq.push(['_setAccount', 'UA-49589431-3'], ['_setDomainName', 'hermitcraft.com'], ['_trackEvent', 'Download', 'Vanilla S3B']);" href="https://download.hermitcraft.com/hermitcraft3-bedrock.zip">Bedrock</a>
+                <span>|</span>
+                <a onclick="_gaq.push(['_setAccount', 'UA-49589431-3'], ['_setDomainName', 'hermitcraft.com'], ['_trackEvent', 'Download', 'Vanilla S3MCW']);" href="https://download.hermitcraft.com/hermitcraft3.mcworld">MCW</a>
+            </li>
+            <li class="list-group-item map">
+                <img class="link-icon" src="/content/img/favicon.png" alt="HermitCraft" width="20" height="20" />
+                Vanilla S4
+                <a onclick="_gaq.push(['_setAccount', 'UA-49589431-3'], ['_setDomainName', 'hermitcraft.com'], ['_trackEvent', 'Download', 'Vanilla S4']);" href="https://download.hermitcraft.com/hermitcraft4_full.zip">Java</a>
+                <span>|</span>
+                <a onclick="_gaq.push(['_setAccount', 'UA-49589431-3'], ['_setDomainName', 'hermitcraft.com'], ['_trackEvent', 'Download', 'Vanilla S4B']);" href="https://download.hermitcraft.com/hermitcraft4-bedrock.zip">Bedrock</a>
+                <span>|</span>
+                <a onclick="_gaq.push(['_setAccount', 'UA-49589431-3'], ['_setDomainName', 'hermitcraft.com'], ['_trackEvent', 'Download', 'Vanilla S4MCW']);" href="https://download.hermitcraft.com/hermitcraft4.mcworld">MCW</a>
+            </li>
+            <li class="list-group-item map">
+                <img class="link-icon" src="/content/img/favicon.png" alt="HermitCraft" width="20" height="20" />
+                Vanilla S5
+                <a onclick="_gaq.push(['_setAccount', 'UA-49589431-3'], ['_setDomainName', 'hermitcraft.com'], ['_trackEvent', 'Download', 'Vanilla S5']);" href="https://download.hermitcraft.com/hermitcraft5.zip">Java</a>
+                <span>|</span>
+                <a onclick="_gaq.push(['_setAccount', 'UA-49589431-3'], ['_setDomainName', 'hermitcraft.com'], ['_trackEvent', 'Download', 'Vanilla S5B']);" href="https://download.hermitcraft.com/hermitcraft5-bedrock.zip">Bedrock</a>
+                <span>|</span>
+                <a onclick="_gaq.push(['_setAccount', 'UA-49589431-3'], ['_setDomainName', 'hermitcraft.com'], ['_trackEvent', 'Download', 'Vanilla S5MCW']);" href="https://download.hermitcraft.com/hermitcraft5.mcworld">MCW</a>
+            </li>
+            <li class="list-group-item map">
+                <img class="link-icon" src="/content/img/favicon.png" alt="HermitCraft" width="20" height="20" />
+                Vanilla S6
+                <a onclick="_gaq.push(['_setAccount', 'UA-49589431-3'], ['_setDomainName', 'hermitcraft.com'], ['_trackEvent', 'Download', 'Vanilla S6']);" href="https://download.hermitcraft.com/hermitcraft6.zip">Java</a>
+                <span>|</span>
+                <a onclick="_gaq.push(['_setAccount', 'UA-49589431-3'], ['_setDomainName', 'hermitcraft.com'], ['_trackEvent', 'Download', 'Vanilla S6B']);" href="https://download.hermitcraft.com/hermitcraft6-bedrock.zip">Bedrock</a>
+                <span>|</span>
+                <a onclick="_gaq.push(['_setAccount', 'UA-49589431-3'], ['_setDomainName', 'hermitcraft.com'], ['_trackEvent', 'Download', 'Vanilla S6MCW']);" href="https://download.hermitcraft.com/hermitcraft6.mcworld">MCW</a>
+            </li>
+            <li class="list-group-item map">
+                <img class="link-icon" src="/content/img/favicon.png" alt="HermitCraft" width="20" height="20" />
+                Vanilla S7
+                <a onclick="_gaq.push(['_setAccount', 'UA-49589431-3'], ['_setDomainName', 'hermitcraft.com'], ['_trackEvent', 'Download', 'Vanilla S7']);" href="https://download.hermitcraft.com/hermitcraft7.zip">Java</a>
+                <span>|</span>
+                <a onclick="_gaq.push(['_setAccount', 'UA-49589431-3'], ['_setDomainName', 'hermitcraft.com'], ['_trackEvent', 'Download', 'Vanilla S7B']);" href="https://download.hermitcraft.com/hermitcraft7-bedrock.zip">Bedrock</a>
+                <span>|</span>
+                <a onclick="_gaq.push(['_setAccount', 'UA-49589431-3'], ['_setDomainName', 'hermitcraft.com'], ['_trackEvent', 'Download', 'Vanilla S7MCW']);" href="https://download.hermitcraft.com/hermitcraft7.mcworld">MCW</a>
+            </li>
+            <li class="list-group-item map">
+                <img class="link-icon" src="/content/img/favicon.png" alt="HermitCraft" width="20" height="20" />
+                Vanilla S8
+                <a onclick="_gaq.push(['_setAccount', 'UA-49589431-3'], ['_setDomainName', 'hermitcraft.com'], ['_trackEvent', 'Download', 'Vanilla S8']);" href="https://download.hermitcraft.com/hermitcraft8.zip">Java</a>
+                <span>|</span>
+                <a onclick="_gaq.push(['_setAccount', 'UA-49589431-3'], ['_setDomainName', 'hermitcraft.com'], ['_trackEvent', 'Download', 'Vanilla S8B']);" href="https://download.hermitcraft.com/hermitcraft8-bedrock.zip">Bedrock</a>
+                <span>|</span>
+                <a onclick="_gaq.push(['_setAccount', 'UA-49589431-3'], ['_setDomainName', 'hermitcraft.com'], ['_trackEvent', 'Download', 'Vanilla S8MCW']);" href="https://download.hermitcraft.com/hermitcraft8.mcworld">MCW</a>
+            </li>
+        </ul>
+    </section>
+</section>
+        </div>
+        <div id="sidebaradcontainer">
+            <section id="sidebarad">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Under menu responsive ad -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-6971512443417688"
+         data-ad-slot="2507070512"
+         data-ad-format="auto"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</section>
+        </div>
+    </div>
+    <div id="HermitCraftContainer" class="col-lg-9 col-md-9 col-sm-9">
+        <section data-ng-controller="HermitCraftController">
+    <header class="btn-group btn-group-justified">
+        <div class="btn-group">
+            <button type="button" class="btn btn-default active" id="btnLatest" data-ng-init="i = 0;" data-ng-class="{active: btnLatest}" data-ng-click="setView('Latest')">Latest</button>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn btn-default" id="btnAll" data-ng-class="{active: btnAll}" data-ng-click="setView('All')">All Videos</button>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn btn-default" id="btnHermitCraft" data-ng-class="{active: btnHermitCraft}" data-ng-click="setView('HermitCraft')">HermitCraft</button>
+        </div>
+    </header>
+    <article data-ng-repeat="video in videos | orderBy:'uploaded':true">
+        <figure>
+            <a href="https://youtube.com/watch?v={{video.id}}">
+                <img data-ng-src="https://i.ytimg.com/vi/{{video.id}}/mqdefault.jpg" alt="{{video.title}}" height="100" width="178" />
+                <span class="duration">{{video.friendlyDuration}}</span>
+            </a>
+        </figure>
+        <section>
+            <ul class="video-details">
+                <li><a href="https://youtube.com/watch?v={{video.id}}"><span class="video-title">{{video.title}}</span></a></li>
+                <li><span><a href="/{{video.uploader.ChannelName}}">{{video.uploader.DisplayName}}</a>&nbsp;<span class="uploadedLarge" title="{{video.uploaded}}">{{video.friendlyTimeMobile}}</span><span class="uploadedMobile" title="{{video.uploaded}}">{{video.friendlyTimeMobile}}</span></span></li>
+                <li class="mobileTinyHide"><span><i class="glyphicon glyphicon-eye-open"></i>&nbsp;{{video.viewCount | number}}&nbsp;&nbsp;<i class="glyphicon glyphicon-thumbs-up"></i>&nbsp;{{video.likeCount | number}}&nbsp;&nbsp;<i class="glyphicon glyphicon-comment"></i>&nbsp;<a href="https://www.youtube.com/comments?filter={{video.id}}">{{video.commentCount | number}}</a></span></li>
+            </ul>
+        </section>
+    </article>
+    <footer data-ng-class="{hide: btnLatest}" class="btn-group btn-group-justified">
+        <div class="btn-group">
+            <button type="button" class="btn btn-default" id="btnMore" data-ng-click="getMoreVideos()">More Videos</button>
+        </div>
+    </footer>
+</section>
+    </div>
+</div>
+
+    <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-3">
+        </div>
+        <div id="FooterContainer" class="col-lg-9 col-md-9 col-sm-9">
+            <center>
+                <span><a href="/privacy">Privacy Policy</a></span>
+                <hr />
+                <span style="font-size:1.2rem;">Website written and maintained by <a href="/Hypnotizd">Hypno</a></span>
+            </center>
+        </div>
+    </div>
+
+        </div>
+        
+        <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-49589431-3']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+    </body>
+</html>
